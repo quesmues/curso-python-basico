@@ -85,6 +85,13 @@ import sys
 sys.argv
 
 
+# Exemplo de Objeto em Orientação a Objetos
+class Nome():
+
+    def __init__(self, primeiro, ultimo):
+        self.primeiro = primeiro
+        self.ultimo = ultimo
+
 
 
 
