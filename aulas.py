@@ -51,10 +51,13 @@ range(len(name))
 
 
 # Interações
+i = 0
 i += 1
 
 
 # Listas, dicionários, tuplas
+nome = 'nome'
+outros = 'outros'
 lista_de_nomes = ['nome', '...'] # Mutável                                      (List)
 dicionario_de_nomes = {'nome':nome, '...':outros} # Não é ordenado              (Dict)
 tupla_de_nomes = ('nome', '...') # Não mutável (não remove ou adiciona objetos) (Tuple)
@@ -76,6 +79,9 @@ conjunto = set()
 # Funções
 def teste(com, ou, sem, argumento):
     print('essa é uma função')
+
+
+com = ou = sem = argumento = 'teste'
 teste(com, ou, sem, argumento)
 
 
@@ -87,15 +93,43 @@ sys.argv
 
 # Exemplo de Objeto em Orientação a Objetos
 class Nome():
-
+    # Construtor
     def __init__(self, primeiro, ultimo):
         self.primeiro = primeiro
         self.ultimo = ultimo
+    # Métodos
+    # def metodo(self, ...):
+    #   ...
 
+# Chamada do Objeto
+nome = Nome # Chamada de classe não precisa (), já função/método precisa de ()
+nome.primeiro = 'teste'
+nome.ultimo = 'teste'
+print(nome)
 
+# Exemplo OOO com hereditariedade
+# Classe pai
+class Veiculo:
+    def __init__(self, cor, rodas, marca, tanque):
+        self.cor = cor
+        self.rodas = rodas
+        self.marca = marca
+        self.tanque = tanque
+    def abastecer(self, litros):
+        self.tanque += litros
 
+#Classe filha, com sobreposição de método
+class Carro(Veiculo):
+    def __init__(self, cor, marca, tanque, placa):
+        Veiculo.__init__(self, cor, 4, marca, tanque)
+        self.placa = placa
+    def abastecer(self, litros):
+        self.tanque +=litros
 
-
+temp = Carro('azul', 'fiat', 50, 'III0000')
+print(temp.cor, temp.marca, temp.placa, temp.rodas, temp.tanque)
+temp.abastecer(100)
+print(temp.tanque)
 
 
 
