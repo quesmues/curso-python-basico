@@ -132,6 +132,34 @@ temp.abastecer(100)
 print(temp.tanque)
 
 
+# Trabalhando com arquivos
+arquivo = open('arquivo.txt', 'a') # b para arquivos binários, w r+ + a para texto
+arquivo.write('teste\n')
+arquivo = open('arquivo.txt', 'r')
+type(print(arquivo))
+for linha in arquivo:
+    print(linha)
+
+
+# Tratamento de exceções
+try:
+    a = 1200 / 0
+except ZeroDivisionError:           # Erro em expecifico, pode capturar o erro com 'as var'
+    print(e)
+except Exception as e:              # Todos os erros, podemos capturar o erro para printar
+    print(e)
+except:                             # Todos os erros
+    print('error')
+
+
+
+
+
+
+
+
+
+
 
 
 

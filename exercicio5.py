@@ -22,7 +22,6 @@ class Conta:
         else:
             print('Você não possui saldo ou limite para esta operação!')
     def depositar(self, quantidade):
-        if
         self.saldo = self.saldo + quantidade
     def consultarSaldo(self):
         print('Seu saldo: ', self.saldo)
