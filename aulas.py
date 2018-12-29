@@ -152,6 +152,19 @@ except:                             # Todos os erros
     print('error')
 
 
+# Web requests
+import requests
+# Dar para passar cabecalhos e cookies
+cabecalho = {'User-agent':'Windows'}
+# Verify=False para ignorar SSL inválido
+request = requests.get("https://putsreq.com/TdTEybwag3tYEypR02GM", verify=False, headers=cabecalho)
+# Também dar para passar post com dados
+dados = {'username':'asdasd',
+         'password':'asdasd'}
+request = requests.post("https://putsreq.com/TdTEybwag3tYEypR02GM", verify=False, data=dados)
+
+
+# Consumo de API's
 
 
 
