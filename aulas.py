@@ -144,7 +144,7 @@ for linha in arquivo:
 # Tratamento de exceções
 try:
     a = 1200 / 0
-except ZeroDivisionError:           # Erro em expecifico, pode capturar o erro com 'as var'
+except ZeroDivisionError as e:           # Erro em expecifico, pode capturar o erro com 'as var'
     print(e)
 except Exception as e:              # Todos os erros, podemos capturar o erro para printar
     print(e)
@@ -164,15 +164,41 @@ dados = {'username':'asdasd',
 request = requests.post("https://putsreq.com/TdTEybwag3tYEypR02GM", verify=False, data=dados)
 
 
-# Consumo de API's
+# Consumo de API's OMDBAPI
+import json
+
+req = None
+try:
+    req = requests.get('http://www.omdbapi.com/?t=interstellar')
+except Exception as error:
+    print('Erro: '+error)
+    pass
+
+#dicionario = json.loads(req.text)
+
+#print(dicionario)
 
 
 
+# Expressões regulares (RegEx)
+import re
 
+string_de_teste = 'Hello World'
+padrao = re.search(r'He\w\w\w', string_de_teste) #RAW String
 
+print(padrao)
 
+#RAW String
+print(r'Oi\nOi')
 
+if padrao:
+    print(padrao.group()) #Retorna quando acha primeira incidência
+else:
+    print('Padrão não encontrado')
 
+padrao = re.findall(r'He\w\w\w', string_de_teste) #Retorna tudo
+
+#regex101.com
 
 
 
