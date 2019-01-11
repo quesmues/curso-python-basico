@@ -196,16 +196,16 @@ if padrao:
 else:
     print('Padrão não encontrado')
 
-padrao = re.findall(r'He\w\w\w', string_de_teste) #Retorna tudo
-
 #regex101.com
 
+requisicao = requests.get('https://solyd.com.br/contato/', verify=False)
 
+padrao = re.findall(r'[\w\.-]+@[\w-]+\.[\w\.-]+', requisicao.text) #Retorna tudo
 
+if padrao:
+    print(padrao) #Retorna quando acha primeira incidência
+else:
+    print('Padrão não encontrado')
 
-
-
-
-
-
+#
 
